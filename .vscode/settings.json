@@ -1,0 +1,9 @@
+{
+    "xml.fileAssociations": [
+      {
+        "pattern": "**/*.xml",
+        "systemId": "file:///E:/xml/LibraryBookOrder.xsd"
+      }
+    ]
+  }
+  

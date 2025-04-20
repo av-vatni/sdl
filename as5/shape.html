@@ -1,0 +1,49 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <title>Inheritance</title>
+    </head>
+    <body>
+      <h1>Choose a shape</h1>
+      <form method="post" action="shape.php">
+        <input
+          type="radio"
+          name="shape"
+          value="triangle"
+          required
+        />Triangle<br />
+        <input type="radio" name="shape" value="circle" required />Circle<br />
+        <input type="radio" name="shape" value="square" required />Square<br />
+        <div id="triangleFields" style="display:none;">
+          Base: <input type="text" value="base" /> Height:
+          <input type="text" value="height" />
+        </div>
+        <div id="circleFields" style="display:none;">
+          Radius <input type="text" value="radius" />
+        </div>
+        <div id="squareFields" style="display:none;">
+          Side: <input type="text" value="side" />
+        </div>
+        <br />
+        <input type="submit" value="Calculate area" />
+      </form>
+      <script>
+        document.querySelectorAll('input[name="shape"]').forEach((elem) => {
+          elem.addEventListener("change", () => {
+            document.getElementById("triangleFields").style.display = "none";
+            document.getElementById("circleFields").style.display = "none";
+            document.getElementById("squareFields").style.display = "none";
+
+            if (this.value === "triangle") {
+              document.getElementById("triangleFields").style.display = "block";
+            } else if (this.value === "square") {
+              document.getElementById("triangleFields").style.display = "block";
+            } else if (this.value === "circle") {
+              document.getElementById("circleFields").style.display = "block";
+            }
+          });
+        });
+      </script>
+    </body>
+  </html></DOCTYPE
+>

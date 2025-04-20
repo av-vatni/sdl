@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryOrder orderid="567"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="LibraryBookOrder.xsd">
+
+    <orderperson>Library Manager</orderperson>
+
+    <library>
+        <name>City Central Library</name>
+        <address>123 Library St</address>
+        <city>Mumbai</city>
+        <country>India</country>
+    </library>
+
+    <book>
+        <title>Introduction to XML</title>
+        <author>John Doe</author>
+        <isbn>978-1234567890</isbn>
+        <quantity>3</quantity>
+        <price>499.99</price>
+    </book>
+
+    <book>
+        <title>Advanced Web Technologies</title>
+        <author>Jane Smith</author>
+        <isbn>978-0987654321</isbn>
+        <quantity>2</quantity>
+        <price>799.50</price>
+    </book>
+
+</libraryOrder>
