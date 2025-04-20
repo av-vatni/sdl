@@ -2,7 +2,7 @@
     "xml.fileAssociations": [
       {
         "pattern": "**/*.xml",
-        "systemId": "file:///E:/xml/LibraryBookOrder.xsd"
+        "systemId": "file:///E:/sdl/as3/LibraryBookOrder.xsd"
       }
     ]
   }
