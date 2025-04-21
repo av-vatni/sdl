@@ -6,12 +6,7 @@
     <body>
       <h1>Choose a shape</h1>
       <form method="post" action="shape.php">
-        <input
-          type="radio"
-          name="shape"
-          value="triangle"
-          required
-        />Triangle<br />
+        <input type="radio" name="shape" value="triangle" required/>Triangle<br />
         <input type="radio" name="shape" value="circle" required />Circle<br />
         <input type="radio" name="shape" value="square" required />Square<br />
         <div id="triangleFields" style="display:none;">
@@ -29,7 +24,7 @@
       </form>
       <script>
         document.querySelectorAll('input[name="shape"]').forEach((elem) => {
-          elem.addEventListener("change", () => {
+          elem.addEventListener("change", function() {
             document.getElementById("triangleFields").style.display = "none";
             document.getElementById("circleFields").style.display = "none";
             document.getElementById("squareFields").style.display = "none";
