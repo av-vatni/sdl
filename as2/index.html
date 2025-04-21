@@ -1,0 +1,101 @@
+<!DOCKTYPE html>
+<html>
+  <head>
+    <title>Validation</title>
+  </head>
+  <body>
+    <h1>FACEBOOK</h1>
+    <form id="registrationForm">
+      Enter name: <input type="text" id="name" name="name" /><br />
+      <span id="nameError" style="color: red"></span><br /><br />
+      Enter email: <input type="email" id="email" name="email" /><br />
+      <span id="emailError" style="color: red"></span><br /><br />
+      Enter password:
+      <input type="password" id="password" name="password" /><br />
+      <span id="passwordError" style="color: red"></span><br /><br />
+      Enter contact number: <input type="text" id="phone" name="phone" /><br />
+      <span id="phoneError" style="color: red"></span><br /><br />
+      Enter address: <input type="text" id="address" name="address" /><br />
+      <span id="addressError" style="color: red"></span>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Validation -->
+    <script>
+      function validateField(id, func) {
+        const input = document.getElementById(id);
+        const errSpan = document.getElementById(id + "Error");
+        input.addEventListener("input", () => {
+          const errorMsg = func(input.value);
+          errSpan.textContent = errorMsg;
+        });
+      }
+
+      // Submit level
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          let isValid = true;
+
+          const name = document.getElementById("name").value;
+          if (name.length < 3 || !/^[a-zA-Z]+$/.test(name)) {
+            document.getElementById("nameError").textContent =
+              "Name must contain more than 3 letters and only alphabets";
+            isValid = false;
+          }
+
+          const email = document.getElementById("email").value;
+          if (!/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            document.getElementById(emaiError).textContent = "Enter valid mail";
+            isValid = false;
+          }
+
+          const phone = document.getElementById("phone").value;
+          if (phone.length != 10 || !/^[0-9]{10}$/.test(phone)) {
+            document.getElementById("phoneError").textContent =
+              "Contact number must contain 10 digits and only digits";
+            isValid = false;
+          }
+
+          const password = document.getElementById("password").value;
+          if (password.lenth < 6) {
+            document.getElementById("passwordError").textContent =
+              "password must contain at least 6 characters";
+            isValid = false;
+          }
+
+          const address = document.getElementById("address").value;
+          if (address.length < 10) {
+            document.getElementById("addressError").textContent =
+              "Address must be at least 10 characters long.";
+            isValid = false;
+          }
+          if (isValid) {
+            alert("Registration successful!");
+          }
+        });
+
+      validateField("name", (value) =>
+        value.length < 3 || !/^[a-zA-Z ]+$/.test(value)
+          ? "Name must be at least 3 characters and contain only letters."
+          : ""
+      );
+      validateField("email", (value) =>
+        !/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(value)
+          ? "Please enter a valid email address."
+          : ""
+      );
+      validateField("password", (value) =>
+        value.length < 6 ? "Password must be at least 6 characters long." : ""
+      );
+      validateField("phone", (value) =>
+        !/^[0-9]{10}$/.test(value) ? "Phone number must be 10 digits." : ""
+      );
+      validateField("address", (value) =>
+        value.length < 10 ? "Address must be at least 10 characters long." : ""
+      );
+    </script>
+  </body>
+</html>
