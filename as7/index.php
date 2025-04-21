@@ -23,7 +23,7 @@ if(isset($_COOKIE['username']) && isset($_COOKIE['password'])){
     <body>
         <form method="post" action="login.php">
             Username: <input type="text" name="username" required value="<?php echo $_COOKIE['username']?? ''; ?>" ><br>
-            Password: <input type="text" name="password" requiredvalue="<?php echo $_COOKIE['password'] ?? '';?>"><br>
+            Password: <input type="text" name="password" required value="<?php echo $_COOKIE['password'] ?? '';?>"><br>
             <input type="submit" name="login" value="Login">
         </form>
         <?php 
